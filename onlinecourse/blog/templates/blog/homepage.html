@@ -5,10 +5,12 @@ Homepage - Courses
 {% endblock %}
 
 {% block content %}
-{% if user.is_authenticated %}
-<h2>Welcome to our site!</h2>
-{% else %}
-<h2>Welcome to our site!</h2>
-<h3>To get access the courses you might be logged in!</h3>
-{% endif %}
+<div class="homepage-content">
+    {% if user.is_authenticated %}
+    <h2>Welcome to our site!</h2>
+    {% else %}
+    <h2>Welcome to our site!</h2>
+    <h3>To get access the courses you might be logged in!</h3>
+    {% endif %}
+</div>
 {% endblock %}

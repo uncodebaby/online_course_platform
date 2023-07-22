@@ -7,23 +7,30 @@ Courses - Courses
 {% block content %}
 <div class="wrapper-courses">
     <h2>Courses:</h2>
+    <div class="courses-content">
+        {% for course in page_obj %}
+        <span class="course-blocks">
+            <a class='block-title' href="{% url 'onecourse' course.id %}"> {{ course.title }} </a>
+            <p>{{ course.description|slice:':30' }}..</p>
+            <p>Owner: {{ course.author }}</p>
+        </span>
+        {% endfor %}
 
-    {% for course in page_obj %}
-    <p> - <a href="{% url 'onecourse' course.id %}">{{ course }}</a></p>
-    {% endfor %}
+        <nav>
+            {%if page_obj%}
+            <ul class="pagination">
+                {% if page_obj.has_previous %}
+                <a class="pagination-link" href="?page={{ page_obj.previous_page_number }}"> < </a>
+                {% endif %}
 
-    <nav>
-        <ul>
-            {% if page_obj.has_previous %}
-            <a href="?page={{ page_obj.previous_page_number }}"> < </a>
+                <span class="page-numbers">{{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+
+                {% if page_obj.has_next %}
+                <a class="pagination-link" href="?page={{ page_obj.next_page_number }}"> > </a>
+                {% endif %}
+            </ul>
             {% endif %}
-
-            {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
-
-            {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}"> > </a>
-            {% endif %}
-        </ul>
-    </nav>
+        </nav>
+    </div>
 </div>
 {% endblock %}

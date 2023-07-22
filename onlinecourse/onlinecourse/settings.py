@@ -75,7 +75,7 @@ WSGI_APPLICATION = 'onlinecourse.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
+        'NAME': 'newdjangodb',
         'USER': 'postgres',
         'PASSWORD': 6565,
         'HOST': 'localhost',

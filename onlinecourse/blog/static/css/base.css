@@ -1,3 +1,8 @@
+body {
+    background-color: #181d27;
+    font-family: 'Lunasima', sans-serif;
+}
+
 
 .navbar p {
     display: inline;
@@ -7,17 +12,25 @@
 
 .navbar a {
     text-decoration: none;
-    color: #333;
+    color: darkgreen;
 }
 
 .navbar button {
-    padding: 8px 12px;
+    padding: 12px 15px;
     border: 1px solid #333;
     border-radius: 6px;
-    background-color: rgba(173, 0, 18, 0.69);
+    background-color: #44b78b;
     color: white;
+    font-size: 15px;
+    font-weight: bold;
     text-decoration: none;
     cursor: pointer; /* Делаем курсор при наведении на кнопку */
+}
+
+.page-numbers,
+.pagination-link {
+    color: white;
+    text-decoration: none;
 }
 
 .my-form {
@@ -79,23 +92,121 @@
 }
 
 .navbar p {
-    padding-left: 50px;
     font-weight: bold;
 }
 
-.wrapper {
-    margin-top: 15px;
+.whole-registration h1 {
+    text-align: center;
+    color: whitesmoke;
 }
 
-.logout-button {
-    margin-left: -20px;
+.wrapper-register {
+    width: 15%;
+    max-width: 800px;
+    margin: 2% auto;
+    padding: 20px;
+    border: none;
+    box-shadow: 15px 15px 4px rgba(0, 0, 0, 0.1);
+    background-color: rgba(167, 189, 172, 0.69);
+    border-radius: 35px;
 }
 
-.wrapper-courses a {
+.centered-button {
+    display: block;
+    margin: 2px auto 0;
+    background-color: rgba(167, 43, 44, 0.8);
+    padding: 13px 23px;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.centered-button:hover {
+    background-color: #45a049;
+}
+
+.register-form p {
+    font-size: 22px;
+    font-weight: 0;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.input-block p {
+    margin-bottom: -10px;
+}
+
+.label-login p {
+    margin-bottom: 7px;
+}
+
+.register-form input {
+    width: 70%;
+    padding: 10px;
+    margin: 0 12% 0 12%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.centered-button:active {
+    background-color: #367c39;
+}
+
+.register-form {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.logout-section {
+    position: fixed;
+    margin-right: 2%;
+    right: 0;
+}
+
+.courses-content {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.wrapper-courses h2 {
+    text-align: center;
+}
+
+
+.block-title {
     text-decoration: none;
     color: rgba(35, 69, 45, 0.58);
 }
 
 .wrapper-courses a:hover {
     text-decoration: underline;
+}
+
+.course-blocks {
+    display: inline-block;
+    text-align: center;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 15px 12px 0 0;
+    padding: 20px 21px 20px 22px;
+    background-color: antiquewhite;
+}
+
+.logout-section p {
+    color: white;
+}
+
+.wrapper-courses h2 {
+    color: whitesmoke;
+}
+
+.homepage-content {
+    text-align: center;
+    color: whitesmoke;
 }

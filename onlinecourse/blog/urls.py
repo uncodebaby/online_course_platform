@@ -7,7 +7,7 @@ urlpatterns = [
 
     # courses
     path('courses/', views.courses, name='courses'),
-    path('course/<int:id>', views.course, name='onecourse'),
+    path('course/<int:id>', views.course_info, name='onecourse'),
     path('add_course/', views.add_course, name='add_course'),
 
     # materials

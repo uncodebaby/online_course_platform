@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 class CourseForm(ModelForm):
     class Meta:
         model = Course
-        fields = ['title', 'description']
+        fields = ['title', 'description', 'category']
 
 
 class CreateUserForm(UserCreationForm):

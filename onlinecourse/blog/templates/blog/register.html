@@ -5,19 +5,33 @@ Register
 {% endblock %}
 
 {% block content %}
-<div class="wrapper">
-    <form method="POST" action="">
-        {% csrf_token %}
-        Username: {{form.username}}<br><br>
-        Email: {{form.email}}<br><br>
-        Password: {{form.password1}}<br><br>
-        Confirm password: {{form.password2}}<br><br>
+<div class="whole-registration">
+    <h1>Let's create your account!</h1>
 
-        {%for message in messages%}
-        <p>{{message}}</p>
-        {%endfor%}
+    <div class="wrapper-register">
+        <form method="POST" action="">
+            <div class="register-form">
+                {% csrf_token %}
+                <div class="input-block">
+                    <p>Username</p><br>{{form.username}}<br><br>
+                </div>
+                <div class="input-block">
+                    <p>Email</p><br> {{form.email}}<br><br>
+                </div>
+                <div class="input-block">
+                    <p>Password</p><br>{{form.password1}}<br><br>
+                </div>
+                <div class="input-block">
+                    <p>Confirm password</p><br> {{form.password2}}<br><br>
+                </div>
 
-        <button type="submit" value="Submit">Register</button>
-    </form>
+                {%for message in messages%}
+                <p>{{message}}</p>
+                {%endfor%}
+            </div>
+
+            <button class="centered-button" type="submit" value="Submit">Register</button>
+        </form>
+    </div>
 </div>
 {% endblock %}
