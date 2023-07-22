@@ -1,0 +1,11 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+{{course.title}}
+{% endblock %}
+
+{% block content %}
+<h1>{{course.title}}</h1>
+<p>Course description: </p>
+<p>{{course.description}}</p>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+    <form method="POST" action="">
+        {% csrf_token %}
+        Username: {{form.username}}<br><br>
+        Email: {{form.email}}<br><br>
+        Password: {{form.password1}}<br><br>
+        Confirm password: {{form.password2}}<br><br>
+
+        {%for message in messages%}
+        <p>{{message}}</p>
+        {%endfor%}
+
+        <button type="submit" value="Submit">Register</button>
+    </form>
+</div>
+{% endblock %}

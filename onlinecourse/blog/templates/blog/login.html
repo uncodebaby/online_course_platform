@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Username.."><br><br>
+        <input type="text" name="password" placeholder="Password.."><br><br>
+
+        <button type="submit">Login</button>
+
+        {% for message in messages %}
+        <p>{{message}}</p>
+        {% endfor %}
+
+    </form>
+</div>
+{% endblock %}

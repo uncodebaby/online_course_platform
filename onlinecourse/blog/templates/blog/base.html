@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+
+
+<nav class="navbar">
+    <button onclick="window.location.href='{% url 'home' %}'">Homepage</button>
+    {% if user.is_authenticated %}
+        <button onclick="window.location.href='{% url 'courses' %}'">Look at courses</button>
+        {% if user.is_authenticated and user.is_superuser %}
+            <button onclick="window.location.href='{% url 'add_course' %}'">Add course at site</button>
+        {% endif %}
+        <button onclick="window.location.href='{% url 'materials' %}'">Materials of our website</button>
+        <p>{{request.user}}</p>
+        <button class="logout-button" onclick="window.location.href='{% url 'logout' %}'">Logout</button>
+    {% else %}
+        <button onclick="window.location.href='{% url 'register' %}'">Register</button>
+        <button onclick="window.location.href='{% url 'login' %}'">Login</button>
+    {% endif %}
+</nav>
+
+{% block content %}
+
+{% endblock %}
+</body>
+</html>
